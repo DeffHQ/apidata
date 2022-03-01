@@ -1,20 +1,18 @@
 class Meals {
-
-
   // Model to restruct our data for easier way to code
-  String strMealThumb;
-  String strMeal;
   String strInstructions;
+  String strMeal;
+  String strMealThumb;
 
   Meals(
       {required this.strMeal,
-        required this.strMealThumb,
-        required this.strInstructions});
+      required this.strInstructions,
+      required this.strMealThumb});
 
   factory Meals.fromJson(Map map) {
     return Meals(
         strMeal: map['strMeal'] ?? 'null',
-        strMealThumb: map['strMealThumb'] ?? 'null',
-        strInstructions: map['strInstructions'] ?? 'null');
+        strInstructions: map['strInstructions'] ?? 'null',
+        strMealThumb: map['strMealThumb'] ?? 'null');
   }
 }

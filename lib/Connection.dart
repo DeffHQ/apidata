@@ -4,14 +4,11 @@ import 'package:http/http.dart' as http;
 
 import 'Meals.dart';
 
-
 class Connection {
-  Future<List<Meals>> getData() async {
-
-
+  Future<List<Meals>> getapidata() async {
     // setting Api to ready for connect
-    var url = Uri.parse(
-        'https://www.themealdb.com/api/json/v1/1/search.php?f=a');
+    var url =
+        Uri.parse('https://www.themealdb.com/api/json/v1/1/search.php?f=a');
 
     // Await the http get response
 
@@ -22,7 +19,7 @@ class Connection {
       if (response.statusCode == 200) {
         // then decode the json-formatted response.
         var jsonResponse =
-        convert.jsonDecode(response.body) as Map<String, dynamic>;
+            convert.jsonDecode(response.body) as Map<String, dynamic>;
 
         // modulate my data to list of objects of Meals
         List myItems = jsonResponse['meals'] as List;
@@ -41,8 +38,8 @@ class Connection {
       return [
         Meals(
             strMeal: 'Error while loading data',
-            strMealThumb: 'Error',
-            strInstructions: '')
+            strInstructions: 'Error',
+            strMealThumb: '')
       ];
     }
   }

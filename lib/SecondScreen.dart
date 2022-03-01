@@ -16,11 +16,11 @@ class SecondScreen extends StatelessWidget {
           return Container(
             child: Column(
               children: [
-                Text(list[index].strMealThumb , style: TextStyle(fontSize: 24 , fontWeight: FontWeight.bold),),
+                Text(list[index].strInstructions , style: TextStyle(fontSize: 24 , fontWeight: FontWeight.bold),),
                 Container(
                   width: double.infinity,
                   height: 200,
-                  child: Image.network(list[index].strInstructions),
+                  child: Image.network(list[index].strMealThumb),
                 ),
                 Text(list[index].strMeal)
               ],
